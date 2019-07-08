@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialNetwork.InsideSystem
-{
+namespace SocialNetwork
+{ 
     class UI
     {   
         public static void MainMenu()
@@ -25,7 +25,7 @@ namespace SocialNetwork.InsideSystem
                 switch (Console.ReadKey().KeyChar)
                 {
                     case '1':
-                        DisplayProfile();
+                        //DisplayProfile();
                         break;
                     case '2':
                         EditProfileMenu();
@@ -88,27 +88,27 @@ namespace SocialNetwork.InsideSystem
             }
         }
 
-        public static void DisplayProfile(Comment comment)
-        {
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine($"Comment Id: {comment.Id}");
-            Console.WriteLine($"Nickname: {comment.Author}");
-            Console.WriteLine($"Age: {comment.Created}");
-            Console.WriteLine($"City: {comment.CommentText}");
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine();
-        }
+        //public static void DisplayProfile(User user)
+        //{
+        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        //    Console.WriteLine($"Comment Id:{user.Id}");
+        //    Console.WriteLine($"Nickname: {user.Nickname}");
+        //    Console.WriteLine($"Age: {user.Age}");
+        //    Console.WriteLine($"City: {user.City}");
+        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        //    Console.WriteLine();
+        //}
 
-        public static void DisplayMessage(Comment comment)
-        {
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine($"Comment Id: {comment.Id}");
-            Console.WriteLine($"Nickname: {comment.Author}");
-            Console.WriteLine($"Age: {comment.Created}");
-            Console.WriteLine($"City: {comment.CommentText}");
-            Console.WriteLine($"Message: {comment.CommentText}");
-            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine();
-        }
+        //public static void DisplayMessage()
+        //{
+        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        //    Console.WriteLine($"Comment Id: {comment.Id}");
+        //    Console.WriteLine($"Nickname: {comment.Author}");
+        //    Console.WriteLine($"Age: {comment.Created}");
+        //    Console.WriteLine($"City: {comment.CommentText}");
+        //    Console.WriteLine($"Message: {comment.CommentText}");
+        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+        //    Console.WriteLine();
+        //}
     }
 }

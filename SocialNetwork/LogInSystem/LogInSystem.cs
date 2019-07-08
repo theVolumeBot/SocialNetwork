@@ -24,7 +24,7 @@ namespace SocialNetwork
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("NickName or PassWord incorrect, Please try again");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(4000);
                     Console.ResetColor();
                 }
 
