@@ -12,32 +12,28 @@ namespace SocialNetwork
         public void StartLogInSystem()
         {
 
-     
+        
+            string nickName = string.Empty;
 
-            LogInUi.DisplayLogIn();
+           LogInUi.DisplayLogIn();
 
 
             Console.ForegroundColor = ConsoleColor.Green;
 
-<<<<<<< HEAD
-
-=======
             Console.WriteLine("Success");
             Console.ResetColor();
             OperateAccount operateAccount = new OperateAccount();
             operateAccount.Operate(nickName);
             Console.Read();
->>>>>>> b81d05d4648e09f0222a0d3eb387501acbc4c674
         }
 
         public void LogIn()
         {
-            string nickName = string.Empty;
             bool logInSuccess = false;
             while (!logInSuccess)
             {
                 Console.WriteLine("Please enter Nickname");
-                nickName = Console.ReadLine();
+                string nickName = Console.ReadLine();
                 Console.WriteLine("Please enter Password");
                 string passWord = Console.ReadLine();
                 SqlQueries sqlQueries = new SqlQueries();
@@ -51,9 +47,7 @@ namespace SocialNetwork
                     Console.ResetColor();
                 } else
                 {
-                    Console.WriteLine("Success");
-                    OperateAccount operateAccount = new OperateAccount();
-                    operateAccount.Operate(nickName);
+                    break;
                 }
                
             }

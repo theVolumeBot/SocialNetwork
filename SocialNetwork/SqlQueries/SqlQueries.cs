@@ -58,13 +58,11 @@ namespace SocialNetwork
                     user.UserCity = reader.GetString(4);
 
                 }
-<<<<<<< HEAD
-=======
                
             
 
->>>>>>> b81d05d4648e09f0222a0d3eb387501acbc4c674
             }
+            Console.WriteLine(user.UserNickName);
             return user;
         }
 
@@ -78,11 +76,15 @@ namespace SocialNetwork
                 string sqlString = $"INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret]) VALUES ('{nickName}', '{userPassword}', '{birthDate}', '{city}', '{secret}')";
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandText = sqlString;
                 sqlCommand.ExecuteNonQuery();
-
-
             }
+        }
+
+        public static void DeleteUser()
+        {
+
 
         }
     }

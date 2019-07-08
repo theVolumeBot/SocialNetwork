@@ -25,7 +25,7 @@ namespace SocialNetwork
                 switch (Console.ReadKey().KeyChar)
                 {
                     case '1':
-                        if(SqlQueries.GetUser(nickName) != null)
+                      
                         DisplayProfile(SqlQueries.GetUser(nickName));
                         break;
                     case '2':
@@ -95,7 +95,7 @@ namespace SocialNetwork
 
             SqlQueries.GetUser(nickName);
             User user = new User();
-            MessageData.ListAllMessages(user.UserId);
+            MessageData.ListAllComments(user.UserId);
 
             while (continueMenu)
             {

@@ -6,7 +6,7 @@ namespace SocialNetwork
 {
     class MessageData
     {
-        public static void ListAllMessages(int Id)
+        public static void ListAllComments(int Id)
         {
             List<Message> messages = MessageSQL.GetAllMessage(Id);
 
