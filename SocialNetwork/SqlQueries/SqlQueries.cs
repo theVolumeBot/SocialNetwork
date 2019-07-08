@@ -23,11 +23,12 @@ namespace SocialNetwork
                 if (reader.Read())
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
-            
+
             }
         }
 
@@ -48,15 +49,11 @@ namespace SocialNetwork
                 var reader = sqlCommand.ExecuteReader();
 
 
-                if(!reader.Read())
+                if (!reader.Read())
                 {
                     user = null;
                 }
-                  
-                
-
             }
-
             return user;
         }
 
@@ -72,10 +69,11 @@ namespace SocialNetwork
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.CommandText = sqlString;
-                sqlCommand.ExecuteNonQuery(); 
+                sqlCommand.ExecuteNonQuery();
 
 
             }
 
         }
+    }
 }

@@ -42,3 +42,5 @@ SELECT * FROM AppUser WHERE @nickname = 'testUser'
 
 SELECT * FROM AppUser
 Where AppUser.NickName = 'TestUser' AND AppUser.UserPassword = 'test'
+
+INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret]) VALUES ('name2', 'test', '1900-01-01', 'hell', 'nope')

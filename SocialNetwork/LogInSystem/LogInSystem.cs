@@ -67,7 +67,7 @@ namespace SocialNetwork
                 string city = Console.ReadLine();
                 Console.WriteLine("Enter your secret recovery word");
                 string secret = Console.ReadLine();
-                SqlQueries.CreateAccount();
+                SqlQueries.CreateUser(nickName, password, birthDate, city, secret);
 
             } else
             {
