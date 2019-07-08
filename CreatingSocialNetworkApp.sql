@@ -9,15 +9,17 @@ GO
 Use SocialNetworkApp
 GO
 
+
 CREATE TABLE AppUser (
 Id int PRIMARY KEY Identity,
 NickName nvarchar(50) not null, 
 UserPassword nvarchar(100) not null, 
-Age int not null, 
+BirthDate date not null, 
 [Secret] nvarchar(100) not null,
 City nvarchar(80) not null
 )
 GO
+
 CREATE TABLE GetMessage (
 Id int PRIMARY KEY Identity,
 FromId int not null REFERENCES AppUser(Id), 
@@ -34,13 +36,9 @@ Content nvarchar(max) not null,
 MessageDate date not null
 )
 
-INSERT INTO AppUser (NickName, UserPassword, Age, City, [Secret])
-VALUES('TestUser', 'test', 34, 'Borlänge', 'torsk')
-
-DECLARE @nickname nvarchar(50) = 'testUser'
-SELECT * FROM AppUser WHERE @nickname = 'testUser'
+INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret])
+VALUES('TestUser', 'test', '1997-06-13', 'Borlänge', 'torsk')
 
 SELECT * FROM AppUser
 Where AppUser.NickName = 'TestUser' AND AppUser.UserPassword = 'test'
 
-INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret]) VALUES ('name2', 'test', '1900-01-01', 'hell', 'nope')
