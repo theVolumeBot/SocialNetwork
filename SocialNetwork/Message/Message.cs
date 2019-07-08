@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SocialNetwork
 {
-    class CreateMessage
+    class Message
     {
         public int MessageId { get; }
         public int FromUserId { get; }
@@ -13,7 +13,7 @@ namespace SocialNetwork
         public string MessageContent { get; set; }
         public DateTime DateForMessage { get;  set; }
 
-        public CreateMessage(int messageId, int fromUser, int toUser, string title, string content)
+        public Message(int messageId, int fromUser, int toUser, string title, string content)
         {
             MessageId = messageId;
             FromUserId = fromUser;

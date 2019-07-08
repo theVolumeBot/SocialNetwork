@@ -32,7 +32,7 @@ namespace SocialNetwork
                         break;
 
                     case '3':
-                        
+                        MessagesMenu();
                         break;
 
                     case '4':
@@ -88,10 +88,48 @@ namespace SocialNetwork
             }
         }
 
+        public static void MessagesMenu()
+        {
+            bool continueMenu = true;
+
+            while (continueMenu)
+            {
+                Console.WriteLine("Messages");
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("(1) Read Message.");
+                Console.WriteLine("(2) Send Message.");;
+                Console.WriteLine("(3) Delete Messsage.");
+                Console.WriteLine("(4) Exit to Main menu");
+                Console.WriteLine();
+
+                switch (Console.ReadKey().KeyChar)
+                {
+                    case '1':
+
+                        break;
+
+                    case '2':
+
+                        break;
+
+                    case '3':
+                        break;
+
+                    case '4':
+                    default:
+                        continueMenu = false;
+                        break;
+
+
+                }
+            }
+        }
+
+
         public static void DisplayProfile(User user)
         {
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-            Console.WriteLine($"Comment Id:{user.UserId}");
+            Console.WriteLine($"User Id:{user.UserId}");
             Console.WriteLine($"Nickname: {user.UserNickName}");
             Console.WriteLine($"Age: {user.UserAge}");
             Console.WriteLine($"City: {user.UserCity}");
@@ -99,16 +137,16 @@ namespace SocialNetwork
             Console.WriteLine();
         }
 
-        //public static void DisplayMessage()
-        //{
-        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-        //    Console.WriteLine($"Comment Id: {comment.Id}");
-        //    Console.WriteLine($"Nickname: {comment.Author}");
-        //    Console.WriteLine($"Age: {comment.Created}");
-        //    Console.WriteLine($"City: {comment.CommentText}");
-        //    Console.WriteLine($"Message: {comment.CommentText}");
-        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-        //    Console.WriteLine();
-        //}
+        public static void DisplayMessage(Message message)
+        {
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine($"Message Id: {message.MessageId}");
+            Console.WriteLine($"From: {message.FromUserId}");
+            Console.WriteLine($"Titel: {message.MessageTitle}");
+            Console.WriteLine($"Date: {message.DateForMessage}");
+            Console.WriteLine($"Message: {message.MessageContent}");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine();
+        }
     }
 }
