@@ -59,5 +59,22 @@ namespace SocialNetwork
 
             return user;
         }
-    }
+
+        public static void CreateUser(string nickName, string userPassword, DateTime birthDate, string city, string secret)
+        {
+            User user = new User();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+
+                string sqlString = $"INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret]) VALUES ('{nickName}', '{userPassword}', '{birthDate}', '{city}', '{secret}')";
+
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.ExecuteNonQuery(); 
+
+
+            }
+
+        }
 }
