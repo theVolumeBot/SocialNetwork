@@ -6,7 +6,7 @@ namespace SocialNetwork
 { 
     class UI
     {   
-        public static void MainMenu()
+        public static void MainMenu(string nickName)
         {
             bool continueMenu = true;
 
@@ -25,7 +25,7 @@ namespace SocialNetwork
                 switch (Console.ReadKey().KeyChar)
                 {
                     case '1':
-                        //DisplayProfile();
+                        DisplayProfile(SqlQueries.GetUser(nickName));
                         break;
                     case '2':
                         EditProfileMenu();
@@ -88,16 +88,16 @@ namespace SocialNetwork
             }
         }
 
-        //public static void DisplayProfile(User user)
-        //{
-        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-        //    Console.WriteLine($"Comment Id:{user.Id}");
-        //    Console.WriteLine($"Nickname: {user.Nickname}");
-        //    Console.WriteLine($"Age: {user.Age}");
-        //    Console.WriteLine($"City: {user.City}");
-        //    Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
-        //    Console.WriteLine();
-        //}
+        public static void DisplayProfile(User user)
+        {
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine($"Comment Id:{user.UserId}");
+            Console.WriteLine($"Nickname: {user.UserNickName}");
+            Console.WriteLine($"Age: {user.UserAge}");
+            Console.WriteLine($"City: {user.UserCity}");
+            Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
+            Console.WriteLine();
+        }
 
         //public static void DisplayMessage()
         //{

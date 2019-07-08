@@ -9,8 +9,7 @@ namespace SocialNetwork
 
         public void Operate(string nickName)
         {
-            UI.MainMenu();
-            
+            UI.MainMenu(nickName);
         }
 
     }
