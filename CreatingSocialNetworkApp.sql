@@ -31,3 +31,10 @@ Content nvarchar(max) not null,
 MessageDate date not null
 )
 
+INSERT INTO AppUser (NickName, UserPassword, Age, City)
+VALUES('TestUser', 'test', 34, 'Borlänge')
+
+
+
+SELECT * FROM AppUser
+Where AppUser.NickName = 'TestUser' AND AppUser.UserPassword = 'test'
