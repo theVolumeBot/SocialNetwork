@@ -1,5 +1,7 @@
 Use master
 GO
+ALTER DATABASE SocialNetworkApp SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 DROP DATABASE SocialNetworkApp
 GO
 CREATE DATABASE SocialNetWorkApp 
@@ -12,6 +14,7 @@ Id int PRIMARY KEY Identity,
 NickName nvarchar(50) not null, 
 UserPassword nvarchar(100) not null, 
 Age int not null, 
+[Secret] nvarchar(100) not null,
 City nvarchar(80) not null
 )
 GO
@@ -31,8 +34,8 @@ Content nvarchar(max) not null,
 MessageDate date not null
 )
 
-INSERT INTO AppUser (NickName, UserPassword, Age, City)
-VALUES('TestUser', 'test', 34, 'Borlänge')
+INSERT INTO AppUser (NickName, UserPassword, Age, City, [Secret])
+VALUES('TestUser', 'test', 34, 'Borlänge', 'torsk')
 
 
 
