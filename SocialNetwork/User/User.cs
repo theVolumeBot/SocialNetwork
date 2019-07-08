@@ -11,8 +11,7 @@ namespace SocialNetwork
         public string UserPassword { get; set; }
         public DateTime BirthDate { get; set; }
         public string UserCity { get; set; }
-
-
+        public string Secret { get; set; }
 
     public static int GetAge(DateTime birthdate)
     {

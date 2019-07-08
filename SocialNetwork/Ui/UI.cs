@@ -135,7 +135,7 @@ namespace SocialNetwork
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine($"User Id:{user.UserId}");
             Console.WriteLine($"Nickname: {user.UserNickName}");
-            Console.WriteLine($"Age: {user.BirthDate}");
+            Console.WriteLine($"Age: {User.GetAge(user.BirthDate)}");
             Console.WriteLine($"City: {user.UserCity}");
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine();
