@@ -9,10 +9,9 @@ namespace SocialNetwork
 
         public void Operate()
         {
-            Console.WriteLine("What do you want to do?...");
-            Console.Read();
+            UI.MainMenu();
+            
         }
-
 
     }
 }

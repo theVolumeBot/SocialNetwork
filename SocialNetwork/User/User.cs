@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialNetwork.User
+namespace SocialNetwork
 {
     class User
     {
