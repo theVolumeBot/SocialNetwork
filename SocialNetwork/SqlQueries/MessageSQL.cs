@@ -11,7 +11,7 @@ namespace SocialNetwork
         {
             List<Message> Messages = new List<Message>();
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SqlConnection sqlConnection = new SqlConnection(SqlQueries.connectionString))
             {
                 sqlConnection.Open();
 

@@ -7,7 +7,7 @@ namespace SocialNetwork
 {
     class SqlQueries
     {
-        private static string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SocialNetworkApp;Integrated Security=True";
+        public static string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=SocialNetworkApp;Integrated Security=True";
 
         public bool TestLogInInfo(string nickName, string password)
         {

@@ -32,7 +32,7 @@ namespace SocialNetwork
                         break;
 
                     case '3':
-                        MessagesMenu();
+                        MessagesMenu(nickName);
                         break;
 
                     case '4':
@@ -88,9 +88,13 @@ namespace SocialNetwork
             }
         }
 
-        public static void MessagesMenu()
+        public static void MessagesMenu(string nickName)
         {
             bool continueMenu = true;
+
+            SqlQueries.GetUser(nickName);
+            User user = new User();
+            MessageData.ListAllComments(user.UserId);
 
             while (continueMenu)
             {
