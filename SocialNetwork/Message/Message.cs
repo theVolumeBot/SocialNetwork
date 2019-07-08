@@ -11,9 +11,9 @@ namespace SocialNetwork.Message
         public int ToUserId { get; }
         public string MessageTitle { get; set; }
         public string MessageContent { get; set; }
-        public DateTime DateForMessage { get; }
+        public DateTime DateForMessage { get;  set; }
 
-        public CreateMessage(int messageId, int fromUser, int toUser, string title, string content, DateTime date)
+        public CreateMessage(int messageId, int fromUser, int toUser, string title, string content)
         {
             MessageId = messageId;
             FromUserId = fromUser;
@@ -21,7 +21,8 @@ namespace SocialNetwork.Message
             MessageTitle = title;
             MessageContent = content;
             DateTime dateNow = DateTime.Now;
-          
+            DateForMessage = dateNow; 
+
         }
     }
 }
