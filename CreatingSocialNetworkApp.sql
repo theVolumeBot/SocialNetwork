@@ -37,7 +37,8 @@ MessageDate date not null
 INSERT INTO AppUser (NickName, UserPassword, Age, City, [Secret])
 VALUES('TestUser', 'test', 34, 'Borlänge', 'torsk')
 
-SELECT * FROM AppUser WHERE @nickname = 'faikl'
+DECLARE @nickname nvarchar(50) = 'testUser'
+SELECT * FROM AppUser WHERE @nickname = 'testUser'
 
 SELECT * FROM AppUser
 Where AppUser.NickName = 'TestUser' AND AppUser.UserPassword = 'test'
