@@ -59,10 +59,20 @@ namespace SocialNetwork
           var user =  SqlQueries.GetUser(nickName);
             if(user == null)
             {
-                Console.WriteLine("FREE NAME");
+                Console.WriteLine("Password:");
+                string password = Console.ReadLine();
+                Console.WriteLine("Birth date ex 1989-01-01:");
+                string birthDate = Console.ReadLine();
+                Console.WriteLine("City");
+                string city = Console.ReadLine();
+                Console.WriteLine("Enter your secret recovery word");
+                string secret = Console.ReadLine();
+                SqlQueries.CreateAccount();
+
             } else
             {
-                Console.WriteLine("NAme taken");
+                Console.WriteLine("Name taken, PLease try something else!");
+                CreateAccount();
             }
           
         }

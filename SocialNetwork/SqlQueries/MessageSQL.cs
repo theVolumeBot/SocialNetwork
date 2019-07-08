@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace SocialNetwork.SqlQueries
+namespace SocialNetwork
 {
     class MessageSQL
     {
