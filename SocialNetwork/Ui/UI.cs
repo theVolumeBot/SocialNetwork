@@ -94,7 +94,7 @@ namespace SocialNetwork
 
             SqlQueries.GetUser(nickName);
             User user = new User();
-            MessageData.ListAllComments(user.UserId);
+            MessageData.ListAllMessages(user.UserId);
 
             while (continueMenu)
             {
