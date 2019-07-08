@@ -16,11 +16,12 @@ namespace SocialNetwork
             string nickName = string.Empty;
 
             LogInUi.DisplayLogIn();
-          
 
 
+            Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("Success");
+            Console.ResetColor();
             OperateAccount operateAccount = new OperateAccount();
             operateAccount.Operate(nickName);
             Console.Read();
@@ -54,6 +55,7 @@ namespace SocialNetwork
 
         public void CreateAccount()
         {
+            Console.Clear();
             Console.WriteLine("Please enter a nickName between 3 and 50 characters");
             string nickName = Console.ReadLine();
           var user =  SqlQueries.GetUser(nickName);
@@ -72,7 +74,7 @@ namespace SocialNetwork
             } else
             {
                 Console.WriteLine("Name taken, PLease try something else!");
-               
+                CreateAccount();
             }
           
         }

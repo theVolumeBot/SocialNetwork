@@ -47,12 +47,19 @@ namespace SocialNetwork
                 sqlCommand.CommandText = sqlString;
                 sqlCommand.Connection = sqlConnection;
                 var reader = sqlCommand.ExecuteReader();
+      
 
-
-                if (!reader.Read())
+                while(reader.Read())
                 {
-                    user = null;
+                    user.UserId = reader.GetInt32(0);
+                    user.UserNickName = reader.GetString(1);
+                    user.UserPassword = reader.GetString(2);
+                    user.BirthDate = reader.GetDateTime(3);
+                    user.UserCity = reader.GetString(4);
+
                 }
+               
+            
 
             }
 
@@ -67,7 +74,6 @@ namespace SocialNetwork
             {
 
                 string sqlString = $"INSERT INTO AppUser (NickName, UserPassword, Birthdate, City, [Secret]) VALUES ('{nickName}', '{userPassword}', '{birthDate}', '{city}', '{secret}')";
-
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
                 sqlCommand.Connection = sqlConnection;
