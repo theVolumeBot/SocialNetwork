@@ -23,11 +23,12 @@ namespace SocialNetwork
                 if (reader.Read())
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
-            
+
             }
         }
 
@@ -51,12 +52,29 @@ namespace SocialNetwork
                 user.UserId = reader.GetInt32(0);
                 user.UserNickName = reader[1].ToString();
                 user.UserPassword = reader[2].ToString();
-                user.UserAge = reader.GetInt32(3);
-                user.UserCity = reader[4].ToString(); 
+                user.BirthDate = reader.GetDateTime(3);
+                user.UserCity = reader[4].ToString();
 
             }
 
             return user;
+        }
+
+        public static void CreateUser(string nickname, string userpassword, DateTime birthdate, string city, string secret)
+        {
+            User user = new User();
+
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+
+                string sqlString = $"INSERT INTO AppUser (NickName, UserPassword, BirthDate, Age, City, [Secret]) VALUES ('{nickname}', '{userpassword}','{birthdate}','{city}','{secret}')";
+
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
+                sqlCommand.ExecuteNonQuery(); 
+
+            }
+
         }
     }
 }

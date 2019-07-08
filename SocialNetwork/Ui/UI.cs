@@ -93,7 +93,7 @@ namespace SocialNetwork
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine($"Comment Id:{user.UserId}");
             Console.WriteLine($"Nickname: {user.UserNickName}");
-            Console.WriteLine($"Age: {user.UserAge}");
+            Console.WriteLine($"Age: {user.BirthDate}");
             Console.WriteLine($"City: {user.UserCity}");
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine();

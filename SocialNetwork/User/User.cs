@@ -9,7 +9,7 @@ namespace SocialNetwork
         public int UserId { get; set; }
         public string UserNickName { get; set; }
         public string UserPassword { get; set; }
-        public int UserAge { get; set; }
+        public DateTime BirthDate { get; set; }
         public string UserCity { get; set; }
     }
 }
