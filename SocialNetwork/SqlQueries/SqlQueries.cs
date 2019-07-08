@@ -60,7 +60,7 @@ namespace SocialNetwork
             return user;
         }
 
-        public static void CreateUser(string nickName, string userPassword, DateTime birthDate, string city, string secret)
+        public static void CreateUser(string nickName, string userPassword, string birthDate, string city, string secret)
         {
             User user = new User();
 
@@ -71,6 +71,7 @@ namespace SocialNetwork
 
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandText = sqlString;
                 sqlCommand.ExecuteNonQuery(); 
 
 
