@@ -6,9 +6,9 @@ namespace SocialNetwork
 {
     class Message
     {
-        public int MessageId { get; }
-        public int FromUserId { get; }
-        public int ToUserId { get; }
+        public int MessageId { get; set; }
+        public int FromUserId { get; set; }
+        public int ToUserId { get; set; }
         public string MessageTitle { get; set; }
         public string MessageContent { get; set; }
         public DateTime DateForMessage { get;  set; }
@@ -22,6 +22,10 @@ namespace SocialNetwork
             MessageContent = content;
             DateTime dateNow = DateTime.Now;
             DateForMessage = dateNow; 
+        }
+
+        public Message()
+        {
 
         }
     }

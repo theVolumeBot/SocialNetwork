@@ -7,7 +7,7 @@ namespace SocialNetwork.SqlQueries
 {
     class MessageSQL
     {
-        public static List<Message> GetAllMessage (int messageId)
+        public static List<Message> GetAllMessage (int userId)
         {
             List<Message> Messages = new List<Message>();
 
@@ -15,7 +15,7 @@ namespace SocialNetwork.SqlQueries
             {
                 sqlConnection.Open();
 
-                string sqlString = $"SELECT * FROM Message WHERE MessageId = {messageId}";
+                string sqlString = $"SELECT * FROM Message WHERE ToUserId = {userId}";
 
                 SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
 
@@ -26,11 +26,13 @@ namespace SocialNetwork.SqlQueries
                     Message message = new Message()
                     {
                         MessageId = reader.GetInt32(0),
-                        Author = reader.GetString(1),
-                        Created = reader.GetDateTime(2),
-                        CommentText = reader.GetString(3),
+                        FromUserId = reader.GetInt32(1),
+                        ToUserId = reader.GetInt32(2),
+                        MessageTitle = reader.GetString(3),
+                        MessageContent = reader.GetString(4),
+                        DateForMessage = reader.GetDateTime(5)
                     };
-                    Message.Add(message);
+                    Messages.Add(message);
                 }
                 return Messages;
             }
