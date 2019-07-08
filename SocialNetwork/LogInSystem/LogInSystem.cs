@@ -73,7 +73,7 @@ namespace SocialNetwork
 
             } else
             {
-                Console.WriteLine("Name taken, PLease try something else!");
+                Console.WriteLine("Name taken, Please try something else!");
                 CreateAccount();
             }
           

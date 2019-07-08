@@ -39,7 +39,7 @@ namespace SocialNetwork
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
-                string sqlString = $"SELECT * FROM AppUser WHERE AppUser.NickName  ='{nickName}'";
+                string sqlString = $"SELECT * FROM AppUser WHERE AppUser.NickName ='{nickName}'";
 
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
