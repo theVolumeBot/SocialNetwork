@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialNetwork.User
+namespace SocialNetwork
 {
-    class User
+    public class User
     {
-
-        public int UserId { get; }
+        public int UserId { get; set; }
         public string UserNickName { get; set; }
         public string UserPassword { get; set; }
         public int UserAge { get; set; }

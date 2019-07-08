@@ -38,24 +38,25 @@ namespace SocialNetwork
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
-                string sqlString = $"usp_ReadBlogPost '{id}'";
+                string sqlString = $"SELECT * FROM AppUser WHERE @Id = Id;";
 
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
+                sqlCommand.Parameters.Add(new SqlParameter("@Id", id));
 
                 var reader = sqlCommand.ExecuteReader();
 
                 reader.Read();
 
-                blogPost.Id = reader.GetInt32(0);
-                blogPost.Title = reader[1].ToString();
-                blogPost.Author = reader[2].ToString();
-                blogPost.Created = reader.GetDateTime(3);
-                blogPost.Content = reader[4].ToString();
-                blogPost.Updated = reader.GetDateTime(5);
+                user.UserId = reader.GetInt32(0);
+                user.UserNickName = reader[1].ToString();
+                user.UserPassword = reader[2].ToString();
+                user.UserAge = reader.GetInt32(3);
+                user.UserCity = reader[4].ToString(); 
+
             }
 
-            return blogPost;
+            return user;
         }
     }
 }

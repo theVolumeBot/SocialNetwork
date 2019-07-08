@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialNetwork.Message
+namespace SocialNetwork
 {
     class CreateMessage
     {
