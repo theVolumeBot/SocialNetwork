@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SocialNetwork.InsideSystem
-{
+namespace SocialNetwork
+{ 
     class UI
     {   
         public static void MainMenu()

@@ -31,31 +31,31 @@ namespace SocialNetwork
             }
         }
 
-        public static User GetUser(int id)
-        {
-            User user = new User();
+        //public static User GetUser(int id)
+        //{
+        //    User user = new User();
 
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
-            {
+        //    using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+        //    {
 
-                string sqlString = $"usp_ReadBlogPost '{id}'";
+        //        string sqlString = $"usp_ReadBlogPost '{id}'";
 
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
+        //        sqlConnection.Open();
+        //        SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
 
-                var reader = sqlCommand.ExecuteReader();
+        //        var reader = sqlCommand.ExecuteReader();
 
-                reader.Read();
+        //        reader.Read();
 
-                blogPost.Id = reader.GetInt32(0);
-                blogPost.Title = reader[1].ToString();
-                blogPost.Author = reader[2].ToString();
-                blogPost.Created = reader.GetDateTime(3);
-                blogPost.Content = reader[4].ToString();
-                blogPost.Updated = reader.GetDateTime(5);
-            }
+        //        blogPost.Id = reader.GetInt32(0);
+        //        blogPost.Title = reader[1].ToString();
+        //        blogPost.Author = reader[2].ToString();
+        //        blogPost.Created = reader.GetDateTime(3);
+        //        blogPost.Content = reader[4].ToString();
+        //        blogPost.Updated = reader.GetDateTime(5);
+        //    }
 
-            return blogPost;
-        }
+        //    return blogPost;
+        //}
     }
 }
