@@ -55,14 +55,15 @@ namespace SocialNetwork
                     user.UserNickName = reader.GetString(1);
                     user.UserPassword = reader.GetString(2);
                     user.BirthDate = reader.GetDateTime(3);
-                    user.UserCity = reader.GetString(4);
+                    user.Secret = reader.GetString(4);
+                    user.UserCity = reader.GetString(5);
 
                 }
                
             
 
             }
-            Console.WriteLine(user.UserNickName);
+    
             return user;
         }
 
