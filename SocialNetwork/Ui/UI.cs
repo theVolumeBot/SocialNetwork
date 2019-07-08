@@ -25,6 +25,7 @@ namespace SocialNetwork
                 switch (Console.ReadKey().KeyChar)
                 {
                     case '1':
+                        if(SqlQueries.GetUser(nickName) != null)
                         DisplayProfile(SqlQueries.GetUser(nickName));
                         break;
                     case '2':
@@ -135,7 +136,7 @@ namespace SocialNetwork
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine($"User Id:{user.UserId}");
             Console.WriteLine($"Nickname: {user.UserNickName}");
-            Console.WriteLine($"Age: {user.BirthDate}");
+            Console.WriteLine($"Age: {User.GetAge(user.BirthDate)}");
             Console.WriteLine($"City: {user.UserCity}");
             Console.WriteLine("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤");
             Console.WriteLine();
