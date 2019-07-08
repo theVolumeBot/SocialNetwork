@@ -31,18 +31,18 @@ namespace SocialNetwork
             }
         }
 
-        public static User GetUser(int id)
+        public static User GetUser(string nickname)
         {
             User user = new User();
 
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
-                string sqlString = $"SELECT * FROM AppUser WHERE @Id = Id;";
+                string sqlString = $"SELECT * FROM AppUser WHERE @nickname = 'nickname';";
 
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
-                sqlCommand.Parameters.Add(new SqlParameter("@Id", id));
+                sqlCommand.Parameters.Add(new SqlParameter("@nickname", nickname));
 
                 var reader = sqlCommand.ExecuteReader();
 
