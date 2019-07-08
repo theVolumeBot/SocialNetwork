@@ -11,5 +11,20 @@ namespace SocialNetwork
         public string UserPassword { get; set; }
         public DateTime BirthDate { get; set; }
         public string UserCity { get; set; }
+
+
+
+    public static int GetAge(DateTime birthdate)
+    {
+            var today = DateTime.Today;
+            int age = today.Year - birthdate.Year;
+            return age; 
+
     }
+
+
+
+
+    }
+
 }

@@ -53,7 +53,9 @@ namespace SocialNetwork
                 {
                     user = null;
                 }
+
             }
+
             return user;
         }
 
@@ -73,6 +75,12 @@ namespace SocialNetwork
 
 
             }
+
+        }
+
+        public static void DeleteUser()
+        {
+
 
         }
     }
