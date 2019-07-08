@@ -38,21 +38,22 @@ namespace SocialNetwork
             using (SqlConnection sqlConnection = new SqlConnection(connectionString))
             {
 
-                string sqlString = $"SELECT * FROM AppUser WHERE @nickname = '{nickName}';";
+                string sqlString = $"SELECT * FROM AppUser WHERE AppUser.NickName  ='{nickName}'";
 
                 sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand(sqlString, sqlConnection);
-                sqlCommand.Parameters.Add(new SqlParameter("@nickname", nickName));
+                SqlCommand sqlCommand = new SqlCommand();
 
+                sqlCommand.CommandText = sqlString;
+                sqlCommand.Connection = sqlConnection;
                 var reader = sqlCommand.ExecuteReader();
 
-                reader.Read();
 
-                user.UserId = reader.GetInt32(0);
-                user.UserNickName = reader[1].ToString();
-                user.UserPassword = reader[2].ToString();
-                user.UserAge = reader.GetInt32(3);
-                user.UserCity = reader[4].ToString(); 
+                if(!reader.Read())
+                {
+                    user = null;
+                }
+                  
+                
 
             }
 
