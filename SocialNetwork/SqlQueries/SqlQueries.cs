@@ -70,12 +70,10 @@ namespace SocialNetwork
 
                 sqlConnection.Open();
                 SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
                 sqlCommand.CommandText = sqlString;
                 sqlCommand.ExecuteNonQuery();
-
-
             }
-
         }
 
         public static void DeleteUser()
