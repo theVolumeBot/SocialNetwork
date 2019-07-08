@@ -7,7 +7,7 @@ namespace SocialNetwork
     class OperateAccount
     {
 
-        public void Operate()
+        public void Operate(string nickName)
         {
             UI.MainMenu();
             
