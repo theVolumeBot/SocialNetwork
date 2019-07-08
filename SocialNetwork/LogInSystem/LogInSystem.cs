@@ -13,27 +13,24 @@ namespace SocialNetwork
         {
 
         
-            string nickName = string.Empty;
+
 
            LogInUi.DisplayLogIn();
 
 
             Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("Success");
-            Console.ResetColor();
-            OperateAccount operateAccount = new OperateAccount();
-            operateAccount.Operate(nickName);
-            Console.Read();
+     
         }
 
         public void LogIn()
         {
+            string nickName = string.Empty;
             bool logInSuccess = false;
             while (!logInSuccess)
             {
                 Console.WriteLine("Please enter Nickname");
-                string nickName = Console.ReadLine();
+                nickName = Console.ReadLine();
                 Console.WriteLine("Please enter Password");
                 string passWord = Console.ReadLine();
                 SqlQueries sqlQueries = new SqlQueries();
@@ -47,7 +44,11 @@ namespace SocialNetwork
                     Console.ResetColor();
                 } else
                 {
-                    break;
+                    Console.WriteLine("Success");
+                    Console.ResetColor();
+                    OperateAccount operateAccount = new OperateAccount();
+                    operateAccount.Operate(nickName);
+                    Console.Read();
                 }
                
             }
